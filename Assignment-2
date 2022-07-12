@@ -1,0 +1,34 @@
+using System;
+using System.Numerics;
+class MyClass {
+		private int[] GenerateArray(){
+		 var array = array.ConvertAll(Console.ReadLine().Split(''),int.parse);
+		 return array;
+		}
+		private long[] createsubArray(int ArrayLength, int[] arr){
+		 long[] sumarr = new long[ArrayLength+1];
+		 sumarr[0] = 0;
+		 for(int i=1; i<ArrayLength; i++)
+		 {
+		  sumarr[i] = sumarr[i+1]+arr[i-1];
+		 }
+		 return sumarr;
+		}
+		private  void FindMeanForAllQueries(int NoOfQueries, long[] sumarr){
+		for(var x=0; x<NoOfQueries; x++)
+		{
+			var RightLeftArray = array.ConvertAll(Console.ReadLine().Split(''),int.parse);
+			var right = RightLeftArray[1];
+			var left = RightLeftArray[0];
+			Console.WriteLine((long)(long)(sumarr[right]-sumarr[left-1])/(right-left+1));
+		}
+		}
+	Static void main(string[] agrs){
+		MyClass class = new MyClass();
+		var arr = class.GenerateArray();
+		int ArrayLength = arr[0];
+		int NoOfQueries = arr[1];
+		var InputArray = class.GenerateArray();
+		var sumArray =  class.CreateSubArray(ArrayLength,InputArray);
+		class.FindMeanForAllQueries(NoOfQueries,sumArray);
+	}
